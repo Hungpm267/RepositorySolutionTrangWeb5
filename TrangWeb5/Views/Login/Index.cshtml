@@ -1,0 +1,84 @@
+﻿@{
+    ViewData["Title"] = "Index";
+}
+<style>
+    .caito {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .caito .container {
+        width: 300px;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .iinput-group {
+        margin-bottom: 15px;
+    }
+
+        .iinput-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .iinput-group input {
+            width: 100%;
+            padding: 8px;
+            border-radius: 3px;
+            border: 1px solid #ccc;
+        }
+
+    #button {
+        padding: 8px 12px;
+        border: none;
+        border-radius: 3px;
+        background-color: #007bff;
+        color: #fff;
+        cursor: pointer;
+    }
+
+        #button:hover {
+            background-color: #0056b3;
+        }
+</style>
+<div class="caito">
+    <div class="container">
+        <form id="loginForm" onsubmit="return validateForm()">
+            <h2>Đăng nhập</h2>
+            <div class="iinput-group">
+                <label for="username">Tên đăng nhập:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="iinput-group">
+                <label for="password">Mật khẩu:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button id="button" type="submit">Đăng nhập</button>
+        </form>
+    </div>
+</div>
+<script>
+    function validateForm() {
+        var username = document.getElementById('username').value;
+        var password = document.getElementById('password').value;
+
+        // Điều kiện đơn giản: kiểm tra xem cả hai trường có được điền không
+        if (username === '' || password === '') {
+            alert('Vui lòng điền đầy đủ tên đăng nhập và mật khẩu.');
+            return false;
+        }
+
+        // Có thể thêm logic xác thực khác ở đây (ví dụ: gửi yêu cầu đăng nhập đến máy chủ)
+
+        return true;
+    }
+
+</script>
